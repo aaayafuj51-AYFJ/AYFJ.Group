@@ -1,0 +1,7 @@
+{
+  "description": "AYFJ Group AI Intelligence Portal - Advanced corporate assistant with real-time web news grounding.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "name": "App"
+}
