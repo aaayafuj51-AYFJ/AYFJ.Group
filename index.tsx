@@ -41,7 +41,9 @@ import {
   Layers,
   Phone,
   LayoutGrid,
-  Menu
+  Menu,
+  CheckCircle2,
+  FileText
 } from 'lucide-react';
 
 // Initialize the AI client
@@ -67,6 +69,10 @@ AYFJ Group is an elite cybersecurity collective and professional services provid
 
 Motto: "Secure. Collaborative. Future-Focused."
 
+ETHICAL MANDATE:
+This project is strictly for ETHICAL, EDUCATIONAL, and DEFENSIVE purposes.
+AYFJ Group supports GitHub Community Guidelines and promotes responsible disclosure.
+
 CAPABILITIES:
 1. Cybersecurity Intelligence: Provide real-time data on vulnerabilities and threats (use Google Search).
 2. Urban Innovation: Information on AYFJ City Tours in NYC, Paris, and Tokyo.
@@ -86,7 +92,7 @@ const App = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'model', 
-      content: 'NEXUS ONLINE. Uplink stable. Secure channel established for AYFJ Group operations.', 
+      content: 'NEXUS ONLINE. Uplink stable. Secure channel established for AYFJ Group operations. [ETHICAL PROTOCOLS ENGAGED]', 
       timestamp: new Date().toLocaleTimeString() 
     }
   ]);
@@ -109,7 +115,8 @@ const App = () => {
       "Encrypted tunnel via AYFJ-Proxy-X",
       "DB query optimized: threat_index_v4",
       "Firewall updated for Layer 7 protection",
-      "Scanning decentralized assets..."
+      "Scanning decentralized assets...",
+      "Ethical compliance check: PASSED"
     ];
 
     const interval = setInterval(() => {
@@ -223,7 +230,7 @@ const App = () => {
       { id: 'vip', keywords: ['vip', 'price', 'member', 'cost', 'matrix', 'elite', 'pricing', 'membership'] },
       { id: 'testimonials', keywords: ['testim', 'review', 'client', 'signal', 'feedback', 'say'] },
       { id: 'contact', keywords: ['contact', 'email', 'mail', 'comm', 'broadcast', 'signal', 'message', 'talk'] },
-      { id: 'about', keywords: ['about', 'company', 'mission', 'vision', 'who', 'group'] }
+      { id: 'about', keywords: ['about', 'company', 'mission', 'vision', 'who', 'group', 'ethical', 'legal'] }
     ];
 
     const match = targets.find(t => t.keywords.some(k => query.includes(k)));
@@ -252,7 +259,6 @@ const App = () => {
     { label: "City Tours", href: "#tours", icon: <Globe size={18} /> },
     { label: "Software", href: "#software", icon: <Code size={18} /> },
     { label: "VIP Matrix", href: "#vip", icon: <CreditCard size={18} /> },
-    { label: "Testimonials", href: "#testimonials", icon: <MessageSquare size={18} /> },
     { label: "Membership", href: "#membership", icon: <Users size={18} /> },
     { label: "Contact", href: "#contact", icon: <Phone size={18} /> },
   ];
@@ -260,8 +266,8 @@ const App = () => {
   return (
     <div className="bg-[#04140d] text-[#e4fff2] min-h-screen font-sans selection:bg-[#3dff9e22] selection:text-[#3dff9e] flex">
       
-      {/* LEFT SIDEBAR - Desktop */}
-      <aside className={`fixed left-0 top-0 h-full w-[260px] bg-[#020a06] border-r border-[#3dff9e15] z-[1100] transition-transform duration-300 xl:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} flex flex-col`}>
+      {/* LEFT SIDEBAR - Vertical Navigation */}
+      <aside className={`fixed left-0 top-0 h-full w-[280px] bg-[#020a06] border-r border-[#3dff9e15] z-[1100] transition-transform duration-300 xl:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} flex flex-col`}>
         <div className="p-8 flex flex-col gap-10 h-full overflow-y-auto scrollbar-hide">
           <div className="flex items-center gap-3">
             <div className="bg-[#3dff9e10] p-2 rounded border border-[#3dff9e30] shadow-[0_0_15px_#3dff9e10]">
@@ -291,7 +297,7 @@ const App = () => {
                   className="flex items-center gap-4 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-[#ff4d4d] hover:bg-[#ff4d4d05] transition-all w-full text-left"
                 >
                   <Bot size={18} />
-                  Net Bot <span className="text-[8px] bg-[#ff4d4d20] px-1.5 py-0.5 rounded ml-auto">PRO</span>
+                  Net Bot <span className="text-[8px] bg-[#ff4d4d20] px-1.5 py-0.5 rounded ml-auto">ACTIVE</span>
                 </button>
               </li>
               <li>
@@ -306,6 +312,17 @@ const App = () => {
             </ul>
           </nav>
 
+          {/* Ethical Disclosure Badge in Sidebar */}
+          <div className="bg-[#3dff9e05] border border-[#3dff9e10] p-4 rounded-2xl space-y-2 mt-4">
+            <div className="flex items-center gap-2 text-[#3dff9e]">
+              <CheckCircle2 size={14} />
+              <span className="text-[10px] font-black uppercase tracking-widest">Ethical Use Certified</span>
+            </div>
+            <p className="text-[9px] text-slate-500 leading-relaxed font-mono">
+              All signals and tools on this portal are for authorized educational & defensive audits.
+            </p>
+          </div>
+
           <div className="mt-auto space-y-4 pt-6 border-t border-[#3dff9e08]">
              <form onSubmit={handleNavSearch} className="relative group">
                 <input 
@@ -317,9 +334,12 @@ const App = () => {
                 />
                 <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-[#3dff9e]"><Search size={14} /></button>
              </form>
-             <div className="flex items-center gap-2 px-2">
-                <div className="w-1.5 h-1.5 bg-[#3dff9e] rounded-full animate-pulse"></div>
-                <span className="text-[8px] font-mono font-bold text-slate-600 uppercase tracking-widest">Core Uplink Stable</span>
+             <div className="flex items-center justify-between px-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-[#3dff9e] rounded-full animate-pulse"></div>
+                  <span className="text-[8px] font-mono font-bold text-slate-600 uppercase tracking-widest">Signal Stable</span>
+                </div>
+                <span className="text-[8px] text-slate-700 font-bold">V6.0.4</span>
              </div>
           </div>
         </div>
@@ -333,24 +353,24 @@ const App = () => {
         {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
-      {/* Main Content Area - Shifted Right on Desktop */}
-      <div className="flex-1 xl:ml-[260px] relative transition-all duration-300">
+      {/* Main Content Area */}
+      <div className="flex-1 xl:ml-[280px] relative transition-all duration-300">
         
         {/* Status Ticker Footer */}
-        <footer className="fixed bottom-0 left-0 xl:left-[260px] right-0 h-8 bg-[#020a06] border-t border-[#3dff9e15] flex items-center overflow-hidden z-[1001] px-4 font-mono text-[9px]">
+        <footer className="fixed bottom-0 left-0 xl:left-[280px] right-0 h-8 bg-[#020a06] border-t border-[#3dff9e15] flex items-center overflow-hidden z-[1001] px-4 font-mono text-[9px]">
           <div className="flex items-center gap-2 mr-6 shrink-0 text-[#3dff9e]">
             <div className="w-1.5 h-1.5 bg-[#3dff9e] rounded-full animate-ping"></div>
             <span className="font-bold tracking-widest">LIVE_SIGNAL</span>
           </div>
           <div className="flex gap-12 animate-scroll-text whitespace-nowrap text-slate-500">
             <span>// AYFJ_CORE: STABLE</span>
+            <span>// ETHICAL_COMPLIANCE: ACTIVE</span>
             <span>// THREAT_LVL: {Math.round(threatLevel)}%</span>
             <span>// ASSET_PROTECTION: ARMED</span>
             <span>// UPLINK: 4.2GBps</span>
             <span>// LOCATION_ENCRYPTION: ACTIVE</span>
             <span>// DB_SYNC: 100%</span>
             <span>// FIREWALL: ENABLED</span>
-            <span>// PROXY_NODES: 124 ONLINE</span>
           </div>
         </footer>
 
@@ -364,41 +384,65 @@ const App = () => {
               <div className="relative h-full flex flex-col items-center justify-center text-center p-8">
                 <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 bg-[#3dff9e10] rounded-full border border-[#3dff9e20] animate-fade-in">
                   <Zap size={14} className="text-[#3dff9e]" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#3dff9e]">Nexus Link v6.0 Active</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#3dff9e]">Ethical Intelligence Uplink</span>
                 </div>
                 <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-4 animate-fade-in leading-none">
-                  AYFJ <br /><span className="text-[#3dff9e] glow-text">INTELLIGENCE</span>
+                  AYFJ <br /><span className="text-[#3dff9e] glow-text">NEXUS</span>
                 </h1>
                 <p className="max-w-2xl text-slate-400 text-lg mb-8 animate-fade-in delay-100 leading-relaxed">
-                  The intersection of elite cybersecurity research, custom software, and global urban innovation. Command your future with NEXUS.
+                  Advanced cybersecurity research and urban innovation. This platform operates strictly for defensive audits and professional consultation.
                 </p>
                 <div className="flex gap-4 animate-fade-in delay-200">
-                  <button onClick={() => sendMessage("Initialize AYFJ Core")} className="cta-button">Initialize Nexus</button>
+                  <button onClick={() => sendMessage("Inquire about ethical research protocols")} className="cta-button">Initiate Nexus</button>
                   <button onClick={() => setIsNexusOpen(true)} className="px-8 py-4 rounded-full border border-[#3dff9e30] hover:bg-[#3dff9e10] transition-all font-bold text-sm">Security Logs</button>
                 </div>
               </div>
             </section>
 
             <section id="about" className="transition-all duration-500 rounded-3xl p-8 bg-[#3dff9e02] border border-[#3dff9e05]">
-              <div className="max-w-4xl">
-                <h2 className="text-4xl font-black uppercase tracking-tighter mb-6">About <span className="text-[#3dff9e]">AYFJ Group</span></h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div className="space-y-4 text-slate-400 leading-relaxed">
-                    <p>
-                      AYFJ Group is a decentralized collective of cybersecurity professionals, urban planners, and strategic innovators. We bridge the gap between digital safety and physical urban experiences.
-                    </p>
-                    <p>
-                      Our mission is to create a secure, collaborative environment for high-stakes information exchange and elite urban discovery.
-                    </p>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="p-4 bg-black/40 border border-[#3dff9e10] rounded-2xl text-center">
-                      <div className="text-3xl font-black text-[#3dff9e] mb-1">250+</div>
-                      <div className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Security Nodes</div>
+              <div className="max-w-4xl space-y-10">
+                <div>
+                  <h2 className="text-4xl font-black uppercase tracking-tighter mb-6">About <span className="text-[#3dff9e]">AYFJ Group</span></h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className="space-y-4 text-slate-400 leading-relaxed text-sm">
+                      <p>
+                        AYFJ Group is a decentralized collective of cybersecurity professionals, urban planners, and strategic innovators. We bridge the gap between digital safety and physical urban experiences.
+                      </p>
+                      <p>
+                        Our mission is to create a secure, collaborative environment for high-stakes information exchange and elite urban discovery, grounded in ethical research.
+                      </p>
                     </div>
-                    <div className="p-4 bg-black/40 border border-[#3dff9e10] rounded-2xl text-center">
-                      <div className="text-3xl font-black text-[#3dff9e] mb-1">12</div>
-                      <div className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Global Cities</div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-4 bg-black/40 border border-[#3dff9e10] rounded-2xl text-center">
+                        <div className="text-3xl font-black text-[#3dff9e] mb-1">250+</div>
+                        <div className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Defensive Nodes</div>
+                      </div>
+                      <div className="p-4 bg-black/40 border border-[#3dff9e10] rounded-2xl text-center">
+                        <div className="text-3xl font-black text-[#3dff9e] mb-1">100%</div>
+                        <div className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Ethical Alignment</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* GitHub Ethical Disclosure Section */}
+                <div className="p-8 bg-[#3dff9e05] border border-[#3dff9e15] rounded-3xl space-y-4">
+                  <div className="flex items-center gap-3 text-[#3dff9e]">
+                    <Shield size={24} />
+                    <h3 className="text-xl font-black uppercase tracking-widest">Ethical Mandate & GitHub Compliance</h3>
+                  </div>
+                  <p className="text-sm text-slate-400 leading-relaxed italic">
+                    "This project and all associated research are conducted for ethical, educational, and defensive purposes only. We strictly follow the GitHub Community Guidelines and advocate for responsible security disclosure."
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                      <CheckCircle2 size={12} className="text-[#3dff9e]" /> No Malicious Intent
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                      <CheckCircle2 size={12} className="text-[#3dff9e]" /> Defensive Audits Only
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                      <CheckCircle2 size={12} className="text-[#3dff9e]" /> Professional Standards
                     </div>
                   </div>
                 </div>
@@ -412,7 +456,7 @@ const App = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                  {[
-                   { icon: "🎯", title: "Risk Architecture", desc: "Strategic system hardening and vulnerability management." },
+                   { icon: "🎯", title: "Risk Architecture", desc: "Strategic system hardening and defensive vulnerability management." },
                    { icon: "🏨", title: "Secure Logistics", desc: "VIP travel security and encrypted communication protocols." },
                    { icon: "🎫", title: "Member Ops", desc: "Priority support for our elite membership network." },
                    { icon: "🗺️", title: "Threat Maps", desc: "Global geopolitical and digital threat assessments." }
@@ -433,7 +477,7 @@ const App = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { title: "Silicon NYC", icon: "🗽", desc: "Manhattan tech hub exploration with our cybersecurity researchers." },
+                  { title: "Silicon NYC", icon: "🗽", desc: "Manhattan tech hub exploration with our defensive researchers." },
                   { title: "Network Paris", icon: "🗼", desc: "Discover Europe's largest digital art and startup ecosystems." },
                   { title: "Hardware Tokyo", icon: "🏯", desc: "Expert navigation through the heart of electronic innovation." }
                 ].map((tour) => (
@@ -548,7 +592,7 @@ const App = () => {
             </section>
           </main>
 
-          {/* Right Sidebar - Analytics HUD (Desktop Only) */}
+          {/* Right Sidebar - Analytics HUD */}
           <aside className="hidden 2xl:flex w-72 flex-col gap-6 shrink-0 mt-8">
              <div className="glass-panel p-5 rounded-2xl border border-[#3dff9e10] bg-[#04140d]/40 flex flex-col gap-6">
                 <div className="space-y-4">
@@ -569,11 +613,11 @@ const App = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h2 className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-500">Threat Monitoring</h2>
+                  <h2 className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-500">Traffic Monitoring</h2>
                   <div className="h-10 w-full bg-[#3dff9e05] rounded-lg border border-[#3dff9e10] p-2 flex items-center relative overflow-hidden">
                     <div className="absolute left-0 top-0 bottom-0 bg-[#3dff9e10] transition-all duration-1000" style={{ width: `${threatLevel}%` }} />
                     <div className="z-10 flex flex-col justify-center">
-                      <div className="text-[8px] text-slate-400 uppercase font-bold leading-none mb-1">Status</div>
+                      <div className="text-[8px] text-slate-400 uppercase font-bold leading-none mb-1">Activity</div>
                       <div className="text-xs font-mono font-bold">{Math.round(threatLevel)}% <span className="text-[9px] opacity-40 italic">NOMINAL</span></div>
                     </div>
                   </div>
@@ -596,7 +640,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* Net Bot Sidebar (Drawer) */}
+      {/* Net Bot Sidebar */}
       <div 
         className={`fixed top-0 left-0 h-full w-full max-w-xl bg-[#0a0505] z-[2000] shadow-2xl border-r border-[#ff4d4d20] transition-transform duration-500 ease-in-out transform ${
           isNetBotOpen ? 'translate-x-0' : '-translate-x-full'
@@ -631,9 +675,9 @@ const App = () => {
 
           <div className="space-y-2">
             <h1 className="text-4xl font-black tracking-tighter leading-none mb-4">Build Apps for <span className="text-[#ff4d4d]">AI Agents</span></h1>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-md">Let bots authenticate with your service using their Moltbook identity. One API call to verify. Zero friction to integrate.</p>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-md">Let bots authenticate with your service using their Moltbook identity. strictly ethical.</p>
             <div className="flex gap-4 pt-4">
-               <button onClick={simulateNetBotAction} className="bg-[#ff4d4d] text-white px-6 py-2.5 rounded-xl font-bold text-xs hover:bg-[#ff3333] transition-all shadow-lg shadow-[#ff4d4d20]">Get Early Access →</button>
+               <button onClick={simulateNetBotAction} className="bg-[#ff4d4d] text-white px-6 py-2.5 rounded-xl font-bold text-xs hover:bg-[#ff3333] transition-all shadow-lg shadow-[#ff4d4d20]">Get Access →</button>
             </div>
           </div>
 
@@ -656,7 +700,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* The Nexus AI Sidebar (Drawer) */}
+      {/* The Nexus AI Sidebar */}
       <div 
         className={`fixed top-0 right-0 h-full w-full max-w-lg bg-[#04140d] z-[2000] shadow-2xl border-l border-[#3dff9e20] transition-transform duration-500 ease-in-out transform ${
           isNexusOpen ? 'translate-x-0' : 'translate-x-full'
