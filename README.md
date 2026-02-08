@@ -7,6 +7,7 @@
 *Alternatively, if DNS is still propagating:* [GitHub Pages Mirror](https://yourusername.github.io/AYFUJ-Group)
 * https://aaayafuj.my.canva.site/consultation
 * https://mehtashish.github.io/GitHub_User-Search_app/
+* https://aayafuj-asc-b96c2135.base44.app/
 ---
 
 The **AYFJ Group Nexus Command Portal** is a high-performance, ultra-modern intelligence interface designed for elite cybersecurity researchers, tech consultants, and urban innovators. It combines advanced system diagnostics with a powerful AI intelligence core to provide a seamless "Command Center" experience.
