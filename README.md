@@ -15,6 +15,28 @@ AYFJ Group promotes responsible security research. We strictly adhere to the [Gi
 
 ---
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AYFJ Video</title>
+</head>
+<body>
+
+<h1>AYFJ Group Introduction</h1>
+
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://app.heygen.com/embedded-player/506eeb2bbb94418d91ccc7c79054a8a9" 
+  title="HeyGen video player" 
+  frameborder="0" 
+  allow="encrypted-media; fullscreen;" 
+  allowfullscreen>
+</iframe>
+
+</body>
+</html>
+
 The **AYFJ Group Nexus Command Portal** is a high-performance, ultra-modern intelligence interface designed for elite cybersecurity researchers, tech consultants, and urban innovators. It combines advanced system diagnostics with a powerful AI intelligence core to provide a seamless "Command Center" experience.
 
 ## ⚡ Core Intelligence: The Nexus AI
