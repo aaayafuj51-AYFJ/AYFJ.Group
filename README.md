@@ -71,22 +71,4 @@ The portal serves as the primary gateway for AYFJ Group's diverse service matrix
 
 ---
 
-# 🚀 IMMEDIATE ACTION PLAN - Solve DNS Error
 
-## ⚠️ You're Getting This Error:
-```
-This site can't be reached
-www.ayfuj-group.com
-DNS_PROBE_FINISHED_NXDOMAIN
-```
-
-**Good News:** This is fixable in 15-20 minutes + 24-48 hour wait
-
-### ✅ Quick Setup Summary
-1. **A Records**: Point your domain to GitHub IPs (`185.199.108.153`, etc.).
-2. **CNAME**: Point `www` to `yourusername.github.io`.
-3. **GitHub Settings**: Enter `www.ayfuj-group.com` in the Pages settings.
-
----
-
-© 2026 AYFJ GROUP | ALL SIGNALS ENCRYPTED | SECURE COLLABORATIVE FUTURE-FOCUSED
